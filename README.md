@@ -41,8 +41,17 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DENABLE_PRECOMPILED_HEADERS=OFF -DOPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules ..
 make
 ```
+8. Install OpenCV
+```
+sudo make install
+sudo ldconfig
+```
+9. Run `python` and `import cv2`
 
 Problem encountered :
 
-*  cmake failed : `<stdlib.h> not found`.
-*  Solution : Make sure **-DENABLE_PRECOMPILED_HEADERS=OFF** is added as argument.
+1.  cmake failed : `<stdlib.h> not found`.
+
+Solution : 
+
+1.  Make sure **-DENABLE_PRECOMPILED_HEADERS=OFF** is added as argument.
