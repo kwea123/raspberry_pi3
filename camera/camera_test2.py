@@ -4,9 +4,9 @@ import time
 import cv2
 
 camera = PiCamera()
-camera.resolution = (640, 480)
+camera.resolution = (960, 720)
 camera.framerate = 10
-rawCapture = PiRGBArray(camera, size=(640, 480))
+rawCapture = PiRGBArray(camera, size=(960, 720))
 
 time.sleep(0.1)
 

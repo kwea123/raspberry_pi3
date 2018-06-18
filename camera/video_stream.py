@@ -7,7 +7,7 @@ import struct
 
 camera = PiCamera()
 camera.resolution = (320, 240)
-camera.framerate = 10
+camera.framerate = 30
 rawCapture = PiRGBArray(camera, size=(320, 240))
 
 time.sleep(0.1)
@@ -15,7 +15,9 @@ time.sleep(0.1)
 # 1 sock only
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect(('192.168.1.3', 5555))
+sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 
+# camera.start_preview()
 for frame in camera.capture_continuous(rawCapture, format='bgr', use_video_port=True):
     t = time.time()
     image = frame.array
