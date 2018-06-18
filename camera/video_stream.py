@@ -27,5 +27,5 @@ for frame in camera.capture_continuous(rawCapture, format='bgr', use_video_port=
     print('\r', time.time()-t, end='')
 #     cv2.imshow("i" ,image)
     rawCapture.truncate(0)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
