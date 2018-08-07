@@ -23,7 +23,7 @@ class Picamera_listener:
 
 
 def main(args):
-  ic = image_converter()
+  ic = Picamera_listener()
   rospy.init_node('picamera_listener', anonymous=True)
   try:
     rospy.spin()
